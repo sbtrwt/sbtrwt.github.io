@@ -435,5 +435,6 @@ ul.main-menu li
     margin: .1em;
     border: #000 solid;
     font-size: 2em;
+    cursor: pointer;
 }
 
