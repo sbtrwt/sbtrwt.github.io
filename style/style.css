@@ -339,6 +339,7 @@ li { margin-left: -1em }
   transform: translateY(-50%); */
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
 }
 .horizontal-align
 {
@@ -346,7 +347,7 @@ li { margin-left: -1em }
   top: 5%;
 
   max-width: 100%; 
-   min-height: 240px; 
+
    text-align: center; 
   
 }
@@ -427,9 +428,24 @@ a:hover,a:active
     top: 0;
     width: 100%
   }
-
+  .footer {
+    position: fixed;
+    bottom: 0;
+    width: 99%;
+    background-color: #cecef3;
+  }
+  .footer-center
+  {
+    text-align: center;
+  }
+  .main-menu{
+    display: block; 
+    padding : 0; 
+    margin:0;
+  }
 ul.main-menu li
 {
+  padding: 0;
     width: 4em;
     height: 2em;
     margin: .1em;
@@ -437,4 +453,7 @@ ul.main-menu li
     font-size: 2em;
     cursor: pointer;
 }
-
+.header-dark
+{
+  background-color: #cecef3;
+}
