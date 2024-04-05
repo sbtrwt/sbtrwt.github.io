@@ -220,71 +220,8 @@ li { margin-left: -1em }
   /*background-color: #fff;*/
 }
 
-@media only screen and (max-width: 1280px)
-{
-  .description, .description-me
-  {
-      font-size: 0.9em;
-  }
-}
-
-@media only screen and (max-width: 768px)
-{
-  /* hide navigation
-  .rsNav
-  {
-    display:none; width:0 !important; height:0 !important; 
-  }*/
-
-  .video
-  {
-      width: 100%;
-  }
-
-  .screenshot
-  {
-      width: 100%;
-      padding-top: calc(1 * 56.25%);
-  }
-
-  .square
-  {
-    width: 100%;
-    padding-top: 100%;
-  }
-
-  .youtube
-  {
-    height: 100%;
-  }
-
-  .description, .description-me
-  {
-    clear: left;
-    margin-top: 2em;
-    margin-left: 0px;
-    margin-right: 0px;
-    box-sizing: border-box;
-    padding-left: 20px;
-    padding-right: 20px;
-    width: 100%;
-    height: auto;
-  }
-
-  .slide
-  {
-   overflow-y: auto;
-   height: auto;
-  }
 
 
-    .rsDefault .rsArrow
-  {
-  width: 44px;
-  }
-
-  
-}
 
 
 .bold
@@ -382,7 +319,7 @@ li { margin-left: -1em }
 #linkedin { background-image: url('../images/icon_in.png'); }
 #email { background-image: url('../images/icon_email.png'); } 
 #github { background-image: url('../images/icon_github.png'); }
-
+#play-game { background-image: url('../images/icon_play.jpg'); }
 
 
 .space
@@ -402,7 +339,7 @@ a:link,a:visited,a
 a:hover,a:active
 {
   text-decoration: underline;
-  font-style: italic;
+ 
   cursor: pointer;
   color: #000;
 }
@@ -438,11 +375,16 @@ ul.main-menu li
 {
   padding: 0;
     width: 4em;
-    height: 2em;
-    margin: .1em;
-    border: #000 solid;
+    height: 1.1em;
+    margin: .15em;
+    border: #990000 1px solid;
     font-size: 2em;
     cursor: pointer;
+    color: #626467;
+}
+li:hover
+{
+  background-color: #c0b056;
 }
 .header-dark
 {
@@ -538,8 +480,8 @@ ul.main-menu li
 
 .content-view
 { 
-  margin-top: 4%;
-  border:2px solid limegreen;
+  margin-top: 0;
+  border:2px solid rgb(255, 255, 255);
   display: grid;
   gap:var(--_spacer);
   grid-auto-flow: row;
@@ -547,7 +489,26 @@ ul.main-menu li
 
 .game-content-view
 {
-  border:2px solid pink;
-  height: calc(100vh - 100px);
+  border:2px solid rgb(255, 255, 255);
+  height:90vh;
   grid-auto-rows:100%;
+}
+.game-content-video
+{
+  height:90vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .game-content-video
+  {
+    height:72vh;
+    width: 100%;
+  }
+  .game-content-view
+{
+  
+  height:72vh;
+  grid-auto-rows:100%;
+}
 }
