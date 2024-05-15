@@ -319,7 +319,7 @@ li { margin-left: -1em }
 #linkedin { background-image: url('../images/icon_in.png'); }
 #email { background-image: url('../images/icon_email.png'); } 
 #github { background-image: url('../images/icon_github.png'); }
-#play-game { background-image: url('../images/icon_play.jpg'); }
+#play-game { background-image: url('../images/icon_play.png'); }
 
 
 .space
@@ -352,7 +352,7 @@ a:hover,a:active
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #eaf5ef;
+    background-color: #cecece;
   }
   .footer-center
   {
@@ -377,10 +377,10 @@ ul.main-menu li
     width: 4em;
     height: 1.1em;
     margin: .15em;
-    border: #990000 1px solid;
+    border: #9e5454 1px solid;
     font-size: 2em;
     cursor: pointer;
-    color: #626467;
+    color: #8d8f93;
 }
 li:hover
 {
@@ -388,9 +388,11 @@ li:hover
 }
 .header-dark
 {
-  background-color: #eaf5ef;
+  background-color: #4f4f4f;
+}.header-transparent
+{
+  background-color: transparent;
 }
-
 .selected-menu
 {
   background-color: #eaf5ef;
@@ -520,5 +522,51 @@ li:hover
       font-size: 3em;
       font-weight: 600;
       padding-left: 10px;
-      color: #626467;
+       color: #626467;
+      
+}
+
+.flip-card {
+  background-color: transparent;
+  border: 1px solid #f1f1f1;
+  width: 100%;
+  height: 85%;
+  perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: #484a51;
+  color: white;
+  transform: rotateY(180deg);
 }
