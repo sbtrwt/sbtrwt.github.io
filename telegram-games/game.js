@@ -15,8 +15,8 @@ window.onload = function() {
         scale: {
             mode: Phaser.Scale.FIT,
             autoCenter: Phaser.Scale.CENTER_BOTH,
-            width: 360,
-            height: 640
+            width: 340,
+            height: 620
         },
         scene: {
             preload: preload,

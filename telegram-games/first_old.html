@@ -11,7 +11,7 @@
         const config = {
             type: Phaser.AUTO,
             width: 360,
-            height: 640,
+            height: 600,
             scene: {
                 preload: preload,
                 create: create,
@@ -27,8 +27,8 @@
         }
 
         function create () {
-            this.add.image(360, 640, 'sky');
-            const star = this.add.image(360, 640, 'star');
+            this.add.image(340, 620, 'sky');
+            const star = this.add.image(340, 620, 'star');
             star.setInteractive();
 
             star.on('pointerdown', () => {
