@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Simple Telegram Game</title>
+    <script src="https://telegram.org/js/games.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
 </head>
 <body>
     <script>
         const config = {
             type: Phaser.AUTO,
-            width: 800,
-            height: 600,
+            width: 360,
+            height: 640,
             scene: {
                 preload: preload,
                 create: create,
@@ -31,8 +32,8 @@
             star.setInteractive();
 
             star.on('pointerdown', () => {
-                star.x = Phaser.Math.Between(0, 800);
-                star.y = Phaser.Math.Between(0, 600);
+                star.x = Phaser.Math.Between(0, 360);
+                star.y = Phaser.Math.Between(0, 640);
             });
         }
 
