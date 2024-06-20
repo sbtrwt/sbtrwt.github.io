@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Telegram Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+</head>
+<body>
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            scene: {
+                preload: preload,
+                create: create,
+                update: update
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        function preload () {
+            this.load.image('sky', 'assets/sky.png');
+            this.load.image('star', 'assets/star.png');
+        }
+
+        function create () {
+            this.add.image(400, 300, 'sky');
+            const star = this.add.image(400, 300, 'star');
+            star.setInteractive();
+
+            star.on('pointerdown', () => {
+                star.x = Phaser.Math.Between(0, 800);
+                star.y = Phaser.Math.Between(0, 600);
+            });
+        }
+
+        function update () {}
+    </script>
+</body>
+</html>
