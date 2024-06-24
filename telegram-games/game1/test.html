@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamster Kombat</title>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
+    <style>
+        body { background-color: #1e1e1e; color: white; font-family: Arial, sans-serif; }
+        #game-container { width: 100%; max-width: 400px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .profile { display: flex; align-items: center; }
+        .profile-pic { width: 40px; height: 40px; border-radius: 50%; background-color: #333; }
+        .daily-tasks { display: flex; justify-content: space-between; margin: 20px 0; }
+        .task { text-align: center; background-color: #333; padding: 10px; border-radius: 10px; }
+        .coins { font-size: 24px; text-align: center; margin: 20px 0; }
+        .hamster-container { width: 200px; height: 200px; margin: 0 auto; background-color: #4a4a9c; border-radius: 50%; }
+        .footer { display: flex; justify-content: space-around; margin-top: 20px; }
+        .footer-item { text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="header">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <span>Shobhit Rawat (CEO)</span>
+            </div>
+            <div>Bronze > 1/10</div>
+        </div>
+        <div class="daily-tasks">
+            <div class="task">Daily reward<br>16:37</div>
+            <div class="task">Daily cipher<br>11:37</div>
+            <div class="task">Daily combo<br>04:37</div>
+        </div>
+        <div class="coins">1,005</div>
+        <div class="hamster-container" id="phaser-game"></div>
+        <div>1000 / 1000 Boost</div>
+        <div class="footer">
+            <div class="footer-item">Exchange</div>
+            <div class="footer-item">Mine</div>
+            <div class="footer-item">Friends</div>
+            <div class="footer-item">Earn</div>
+            <div class="footer-item">Airdrop</div>
+        </div>
+    </div>
+
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 200,
+            height: 200,
+            parent: 'phaser-game',
+            scene: {
+                preload: preload,
+                create: create
+            }
+        };
+
+        const game = new Phaser.Game(config);
+
+        function preload() {
+            this.load.image('hamster', 'path/to/your/hamster/image.png');
+        }
+
+        function create() {
+            const hamster = this.add.image(100, 100, 'hamster');
+            hamster.setScale(0.5);
+        }
+    </script>
+</body>
+</html>

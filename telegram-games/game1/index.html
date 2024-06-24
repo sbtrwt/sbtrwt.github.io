@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phaser Game with Tabs</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #phaser-container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            position: relative;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+        .tab {
+            color: white;
+            cursor: pointer;
+            text-align: center;
+            padding: 10px 0;
+            flex: 1;
+        }
+        .tab img {
+            width: 24px;
+            height: 24px;
+            display: block;
+            margin: 0 auto 5px auto;
+        }
+        .active {
+            background-color: #555;
+        }
+        .content {
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 5;
+        }
+        .content p {
+            margin: 0;
+        }
+
+        body { background-color: #1e1e1e; color: white; font-family: Arial, sans-serif; }
+        #game-container { width: 100%; max-width: 400px; margin: 0 auto; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+        .profile { display: flex; align-items: center; }
+        .profile-pic { width: 40px; height: 40px; border-radius: 50%; background-color: #333; }
+        .daily-tasks { display: flex; justify-content: space-between; margin: 20px 0; }
+        .task { text-align: center; background-color: #333; padding: 10px; border-radius: 10px; }
+        .coins { font-size: 24px; text-align: center; margin: 20px 0; }
+        .hamster-container { width: 200px; height: 200px; margin: 0 auto; background-color: #4a4a9c; border-radius: 50%; }
+        .footer { display: flex; justify-content: space-around; margin-top: 20px; }
+        .footer-item { text-align: center; }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div class="header">
+            <div class="profile">
+                <div class="profile-pic"></div>
+                <span>Shobhit Rawat (CEO)</span>
+            </div>
+            <div>Bronze > 1/10</div>
+        </div>
+        <div class="daily-tasks">
+            <div class="task">Daily reward<br>16:37</div>
+            <div class="task">Daily cipher<br>11:37</div>
+            <div class="task">Daily combo<br>04:37</div>
+        </div>
+        <div class="coins" id="coin-text">1,005</div>
+       
+        <div>1000 / 1000 Boost</div>
+       
+    </div>
+
+    <div id="phaser-container">
+       
+        <!-- <div class="hamster-container" id="phaser-game"></div> -->
+      
+        <div id="phaser-game"></div>
+        <div id="content" class="content"></div>
+    </div>
+ 
+    <div class="tabs">
+        <div id="exchange-tab" class="tab active">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/exchange.png" alt="Exchange Icon"/>
+            Exchange
+        </div>
+        <div id="mine-tab" class="tab">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/mining.png" alt="Mine Icon"/>
+            Mine
+        </div>
+        <div id="friends-tab" class="tab">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/friends.png" alt="Friends Icon"/>
+            Friends
+        </div>
+        <div id="earn-tab" class="tab">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/money.png" alt="Earn Icon"/>
+            Earn
+        </div>
+        <div id="airdrop-tab" class="tab">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/airdrop.png" alt="Airdrop Icon"/>
+            Airdrop
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
