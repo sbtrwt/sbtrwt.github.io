@@ -48,15 +48,15 @@ window.onload = function() {
             // Create and animate the "+1" text
             const plusOneText = this.scene.add.text(pointer.x, pointer.y, '+1', {
                 fontSize: '24px',
-                fill: '#AFE700'  // Gold color
+                fill: '#CECECE'  
             });
             plusOneText.setOrigin(0.5, 0.5);
 
             this.scene.tweens.add({
                 targets: plusOneText,
-                y: pointer.y - 50,  // Move up by 50 pixels
+                y: pointer.y - 200,  // Move up by 50 pixels
                 alpha: 0,  // Fade out
-                duration: 1000,  // Animation duration in milliseconds
+                duration: 3000,  // Animation duration in milliseconds
                 ease: 'Power1',
                 onComplete: function() {
                     plusOneText.destroy();  // Remove the text object when animation is complete
