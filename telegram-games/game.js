@@ -22,7 +22,7 @@ window.onload = function() {
     //var clickText;
 
     function preload() {
-        this.load.image('circle', './img/cicle_bg.png');
+        this.load.image('circle', './img/circle_bg.png');
     }
 
     function create() {
