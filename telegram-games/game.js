@@ -27,8 +27,8 @@ window.onload = function() {
 
     function create() {
         //this.add.text(10, 10, 'Mining Game', { font: '16px Arial', fill: '#ffffff' });
-        var circle = this.add.image(160, 100, 'clickCircle').setInteractive(); // Centered in the middle of the canvas
-
+        var circle = this.add.image(160, 200, 'clickCircle').setInteractive(); // Centered in the middle of the canvas
+        circle.scale = 0.7;
         //clickText = this.add.text(140, 40, '0', { font: '16px Arial', fill: '#ffffff' });
 
         circle.on('pointerdown', function() {
