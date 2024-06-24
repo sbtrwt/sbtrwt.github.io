@@ -47,8 +47,10 @@ window.onload = function() {
 
             // Create and animate the "+1" text
             const plusOneText = this.scene.add.text(pointer.x, pointer.y, '+1', {
-                fontSize: '24px',
-                fill: '#CECECE'  
+                fontSize: '32px',
+                fill: '#000000' ,
+                fontWeight: '800',
+                 
             });
             plusOneText.setOrigin(0.5, 0.5);
 
