@@ -22,12 +22,12 @@ window.onload = function() {
     //var clickText;
 
     function preload() {
-        this.load.image('circle', './img/circle_bg.png');
+        this.load.image('clickCircle', 'https://sbtrwt.github.io/telegram-games/img/clickCircle.png');
     }
 
     function create() {
         //this.add.text(10, 10, 'Mining Game', { font: '16px Arial', fill: '#ffffff' });
-        var circle = this.add.image(160, 100, 'circle').setInteractive(); // Centered in the middle of the canvas
+        var circle = this.add.image(160, 100, 'clickCircle').setInteractive(); // Centered in the middle of the canvas
 
         //clickText = this.add.text(140, 40, '0', { font: '16px Arial', fill: '#ffffff' });
 
