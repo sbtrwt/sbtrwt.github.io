@@ -1,22 +1,14 @@
 window.onload = function() {
     var config = {
         type: Phaser.AUTO,
-        width: 360,
+        parent: 'mining-game',
+        width: 320,
         height: 640,
-        backgroundColor: '#2d2d2d',
-        parent: 'game-container',
-        physics: {
-            default: 'arcade',
-            arcade: {
-                gravity: { y: 0 },
-                debug: false
-            }
-        },
         scale: {
             mode: Phaser.Scale.FIT,
             autoCenter: Phaser.Scale.CENTER_BOTH,
-            width: 340,
-            height: 620
+            width: 320,
+            height: 640,
         },
         scene: {
             preload: preload,
@@ -26,41 +18,91 @@ window.onload = function() {
     };
 
     var game = new Phaser.Game(config);
+    var clickCount = 0;
+    //var clickText;
 
     function preload() {
-        this.load.image('object', 'https://examples.phaser.io/assets/sprites/phaser3-logo.png');
+        this.load.image('circle', './img/cicle_bg.png');
     }
 
     function create() {
-        // Create a group of objects
-        this.objects = this.physics.add.group();
+        //this.add.text(10, 10, 'Mining Game', { font: '16px Arial', fill: '#ffffff' });
+        var circle = this.add.image(160, 100, 'circle').setInteractive(); // Centered in the middle of the canvas
 
-        // Create multiple objects
-        for (var i = 0; i < 10; i++) {
-            var x = Phaser.Math.Between(50, 310);
-            var y = Phaser.Math.Between(50, 590);
-            var object = this.objects.create(x, y, 'object');
-            object.setInteractive();
-        }
+        //clickText = this.add.text(140, 40, '0', { font: '16px Arial', fill: '#ffffff' });
 
-        // Add a click event to the objects
-        this.input.on('gameobjectdown', onObjectClicked, this);
+        circle.on('pointerdown', function() {
+            clickCount++;
+            //clickText.setText(clickCount);
+            setCoinVal(clickCount);
+        });
 
-        // Display score
-        this.score = 0;
-        this.scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '32px', fill: '#ffffff' });
+        showExchangeTab();
     }
 
     function update() {
-        // Game logic updates go here
     }
 
-    function onObjectClicked(pointer, gameObject) {
-        // Remove the clicked object
-        gameObject.destroy();
+    function showExchangeTab() {
+        document.getElementById('content').innerHTML = '<p>Exchange content here.</p>';
+        document.getElementById('content').style.display = 'flex';
+    }
 
-        // Increase the score
-        this.score += 10;
-        this.scoreText.setText('Score: ' + this.score);
+    function showMineTab() {
+        document.getElementById('content').innerHTML = '<p>Click the circle to mine!</p>';
+        document.getElementById('content').style.display = 'flex';
+    }
+
+    function showFriendsTab() {
+        document.getElementById('content').innerHTML = '<p>Your friends list.</p>';
+        document.getElementById('content').style.display = 'flex';
+    }
+
+    function showEarnTab() {
+        document.getElementById('content').innerHTML = '<p>Ways to earn rewards.</p>';
+        document.getElementById('content').style.display = 'flex';
+    }
+
+    function showAirdropTab() {
+        document.getElementById('content').innerHTML = '<p>Current airdrops.</p>';
+        document.getElementById('content').style.display = 'flex';
+    }
+
+    document.getElementById('exchange-tab').addEventListener('click', function() {
+        setActiveTab('exchange-tab');
+        showExchangeTab();
+    });
+
+    document.getElementById('mine-tab').addEventListener('click', function() {
+        setActiveTab('mine-tab');
+        showMineTab();
+    });
+
+    document.getElementById('friends-tab').addEventListener('click', function() {
+        setActiveTab('friends-tab');
+        showFriendsTab();
+    });
+
+    document.getElementById('earn-tab').addEventListener('click', function() {
+        setActiveTab('earn-tab');
+        showEarnTab();
+    });
+
+    document.getElementById('airdrop-tab').addEventListener('click', function() {
+        setActiveTab('airdrop-tab');
+        showAirdropTab();
+    });
+
+    function setActiveTab(tabId) {
+        var tabs = document.getElementsByClassName('tab');
+        for (var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+        }
+        document.getElementById(tabId).classList.add('active');
+        document.getElementById('content').style.display = 'none';
+    }
+
+    function setCoinVal(value){
+        document.getElementById('coin-text').innerHTML = value;
     }
 };
