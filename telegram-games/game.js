@@ -28,13 +28,40 @@ window.onload = function() {
     function create() {
         //this.add.text(10, 10, 'Mining Game', { font: '16px Arial', fill: '#ffffff' });
         var circle = this.add.image(160, 200, 'clickCircle').setInteractive(); // Centered in the middle of the canvas
-        circle.scale = 0.7;
+        circle.scale = 0.5;
         //clickText = this.add.text(140, 40, '0', { font: '16px Arial', fill: '#ffffff' });
 
-        circle.on('pointerdown', function() {
+        circle.on('pointerdown', function(pointer) {
             clickCount++;
             //clickText.setText(clickCount);
             setCoinVal(clickCount);
+
+              // Hamster animation
+              this.scene.tweens.add({
+                targets: circle,
+                scaleX: 0.55,
+                scaleY: 0.55,
+                duration: 100,
+                yoyo: true
+            });
+
+            // Create and animate the "+1" text
+            const plusOneText = this.scene.add.text(pointer.x, pointer.y, '+1', {
+                fontSize: '24px',
+                fill: '#AFE700'  // Gold color
+            });
+            plusOneText.setOrigin(0.5, 0.5);
+
+            this.scene.tweens.add({
+                targets: plusOneText,
+                y: pointer.y - 50,  // Move up by 50 pixels
+                alpha: 0,  // Fade out
+                duration: 1000,  // Animation duration in milliseconds
+                ease: 'Power1',
+                onComplete: function() {
+                    plusOneText.destroy();  // Remove the text object when animation is complete
+                }
+            });
         });
 
         showExchangeTab();
@@ -105,4 +132,6 @@ window.onload = function() {
     function setCoinVal(value){
         document.getElementById('coin-text').innerHTML = value;
     }
+
+    
 };
