@@ -137,16 +137,18 @@ window.onload = function() {
         document.getElementById('coin-text').innerHTML = value;
     }
 
-    function setUserName(){
-        let usercard = document.getElementById("user-name"); 
-
-       
-        usercard.innerHTML = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
-           
-
-        let userid = document.createElement('p'); 
-        userid.innerText = `${tg.initDataUnsafe.user.id}`; 
-        usercard.appendChild(userid); 
-    }
     setUserName();
 };
+
+function setUserName(){
+    let usercard = document.getElementById("user-name"); 
+    const { first_name, last_name, username ,language_code, id } = window.Telegram.WebApp.initDataUnsafe.user;
+   
+    usercard.innerHTML = `${first_name} ${last_name} ${username} (${language_code})`;
+       
+
+    let userid = document.createElement('p'); 
+    userid.innerText = `${id}`; 
+    usercard.appendChild(userid); 
+}
+
