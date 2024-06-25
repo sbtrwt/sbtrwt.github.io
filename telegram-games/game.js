@@ -1,4 +1,6 @@
 window.onload = function() {
+    let tg = window.Telegram.WebApp;
+
     var config = {
         type: Phaser.AUTO,
         parent: 'mining-game',
@@ -135,5 +137,16 @@ window.onload = function() {
         document.getElementById('coin-text').innerHTML = value;
     }
 
-    
+    function setUserName(){
+        let usercard = document.getElementById("user-name"); 
+
+       
+        usercard.innerHTML = `${tg.initDataUnsafe.user.first_name} ${tg.initDataUnsafe.user.last_name} ${tg.initDataUnsafe.user.username} (${tg.initDataUnsafe.user.language_code})`;
+           
+
+        let userid = document.createElement('p'); 
+        userid.innerText = `${tg.initDataUnsafe.user.id}`; 
+        usercard.appendChild(userid); 
+    }
+    setUserName();
 };
