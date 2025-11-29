@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <defs>
+    <linearGradient id="sbtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#41D1FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#BD34FE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect x="2" y="5" width="196" height="70" fill="none" stroke="url(#sbtGrad)" stroke-width="2" rx="4"/>
+  <text x="100" y="48" font-size="72" font-weight="bold" fill="url(#sbtGrad)" font-family="Arial, Helvetica, sans-serif" letter-spacing="4" text-anchor="middle" dominant-baseline="middle">SBT</text>
+</svg>

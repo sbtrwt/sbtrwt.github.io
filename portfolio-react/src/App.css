@@ -69,6 +69,16 @@ main {
 
 .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem }
 
+.about-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
 @media (max-width:720px){
   .about-grid{ grid-template-columns:1fr }
   .nav-link{ margin-left:.6rem }

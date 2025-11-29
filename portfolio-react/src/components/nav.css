@@ -5,6 +5,11 @@
 .nav-link.active { color: #ffd1c1; border-bottom:2px solid rgba(255,255,255,0.06) }
 .brand { color: #fff; font-weight:700 }
 
+.brand-sub { font-size: 0.8rem; color: rgba(255,255,255,0.75); margin-top: 4px }
+.brand-link { color: rgba(255,255,255,0.75); text-decoration: none }
+.brand-link:hover { text-decoration: underline }
+.brand-sep { margin: 0 6px; color: rgba(255,255,255,0.45) }
+
 /* Mobile toggle */
 .nav-toggle { display: none; background: transparent; border: 0; color: #fff }
 .nav-toggle .hamburger { width: 22px; height: 2px; display: block; background: #fff; position: relative }

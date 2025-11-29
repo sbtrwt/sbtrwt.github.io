@@ -24,10 +24,9 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  /* Use normal document flow; `.container` will center content */
 }
 
 h1 {
@@ -65,4 +64,9 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* Ensure the root app container stretches full width and uses our centered container */
+#root {
+  width: 100%;
 }
