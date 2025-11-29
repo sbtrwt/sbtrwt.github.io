@@ -48,24 +48,27 @@ main {
 
 .hero { text-align: center; padding: 2rem 0 }
 .hero h1{ font-size:2.2rem; margin-bottom:.4rem }
-.subtitle{ color:#666 }
-.lead{ color:#444 }
+.subtitle{ color: inherit }
+.lead{ color: inherit }
 
 .project-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; margin-top:1rem }
 .project-card{ background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08); display:flex; flex-direction:column }
 .project-card img{ width:100%; height:160px; object-fit:cover }
 .project-body{ padding:12px 14px; flex:1; display:flex; flex-direction:column }
-.project-body h3{ margin:0 0 .5rem }
-.project-body p{ margin:0 0 1rem; color:#444 }
+.project-body h3{ margin:0 0 .5rem; color: inherit }
+.project-body p{ margin:0 0 1rem; color: inherit }
 .project-links{ margin-top:auto; display:flex; gap:8px }
 .project-links a{ flex:1; text-align:center; padding:.5rem; background:#0077cc; color:#fff; border-radius:6px; text-decoration:none }
 
 .videos-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1rem }
-.video-item{ background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08) }
+.video-item{ background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.08); color: #213547 }
 .video-wrapper{ position:relative; padding-bottom:56.25%; height:0; }
 .video-wrapper iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0 }
-.video-item h3{ margin:12px }
-.video-item p{ margin:0 12px 12px; color:#444 }
+.video-item h3{ margin:12px; color: inherit }
+.video-item p{ margin:0 12px 12px; color: inherit }
+
+/* Ensure project cards (white background) show dark text regardless of theme */
+.project-card { color: #213547 }
 
 .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:1.5rem }
 
@@ -83,7 +86,7 @@ main {
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.6;
-  color: #333;
+  color: inherit;
   margin-bottom: 0.8rem;
 }
 
