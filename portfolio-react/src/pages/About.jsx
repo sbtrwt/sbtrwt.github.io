@@ -8,9 +8,11 @@ export default function About(){
         <div>
           <img src="/images/sbt.jpg" alt={aboutData.name} className="about-photo" />
           <h2>{aboutData.name}</h2>
-          {aboutData.summary.map((p, i) => (
-            <p key={i}>{p}</p>
-          ))}
+          <div className="about-summary">
+            {aboutData.summary.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
+          </div>
         </div>
         <div>
           <h3>Key Skills</h3>

@@ -79,6 +79,14 @@ main {
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
 }
 
+.about-summary p {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
 @media (max-width:720px){
   .about-grid{ grid-template-columns:1fr }
   .nav-link{ margin-left:.6rem }
